@@ -33,7 +33,7 @@ public class TasksRepository {
 	
 	public Todo getTodo(Long id) {
 		RestTemplate restTemplate = new RestTemplate();
-		return restTemplate.getForObject(url + "/todo" + id, Todo.class);
+		return restTemplate.getForObject(url + "/todo/" + id, Todo.class);
 	}
 
 }
