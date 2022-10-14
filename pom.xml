@@ -41,7 +41,7 @@
 					<pactBrokerUrl>http://localhost:9080</pactBrokerUrl>
 					<pactBrokerUsername>user1</pactBrokerUsername>
 					<pactBrokerPassword>userpasswd</pactBrokerPassword>
-					<trimSnapshot>true</trimSnapshot>						
+					<trimSnapshot>true</trimSnapshot>										
 				</configuration>
 			</plugin>
 		</plugins>
