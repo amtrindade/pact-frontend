@@ -88,11 +88,4 @@ public class TasksController {
 		model.addAttribute("todo", todo);
 		return "add";
 	}
-	
-//	@SuppressWarnings("unchecked")
-//	private List<Todo> getTodos() {
-//		RestTemplate restTemplate = new RestTemplate();
-//		return restTemplate.getForObject(
-//				getBackendURL() + "/todo", List.class);
-//	}
 }
