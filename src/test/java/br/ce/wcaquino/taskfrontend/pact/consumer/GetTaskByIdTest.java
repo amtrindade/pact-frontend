@@ -31,13 +31,13 @@ public class GetTaskByIdTest {
 	public RequestResponsePact createPact(PactDslWithProvider builder) {
 		DslPart body = new PactDslJsonBody()
 				.numberType("id", 1L)
-				.stringType("task", "Remember the beer")
+				.stringType("task")
 				.date("dueDate", "yyyy-MM-dd", new Date());		
 						
 		return builder				
 				.given("There is a task with id = 1")
 				.uponReceiving("Retrieve Task #1")
-					.path("/todo/1")
+					.matchPath("/todo/\\d+", "/todo/1")
 					.method("GET")
 				.willRespondWith()
 					.status(200)
@@ -58,7 +58,7 @@ public class GetTaskByIdTest {
 		//Assert
 		assertThat(task.getId(), is(notNullValue()));
 		assertThat(task.getId(), is(1L));
-		assertThat(task.getTask(), is("Remember the beer"));
+		assertThat(task.getTask(), is(notNullValue()));
 		assertThat(task.getDueDate(), is(LocalDate.now()));
 	}
 }
